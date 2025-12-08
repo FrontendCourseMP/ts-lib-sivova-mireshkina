@@ -33,9 +33,22 @@ function form(form: HTMLFormElement): IFormValidator {
       }
       const fieldMethods = {
         string() {
+          const isString = fieldik.getAttribute('type');
+          if (isString !== 'text') {
+            throw new Error("надо чтоб был текст")
+          }
           return fieldMethods;
         },
         min(errorMessage: string) {
+          const checkType = fieldik.getAttribute('type');
+          const checkMinText = fieldik.getAttribute('minlength');
+          const checkMinNumber = fieldik.getAttribute('min');
+
+          if (checkType !== 'number' && checkType !== 'range')  {
+            if (checkMinText !== fieldik.length) {
+
+            }
+          }
           return fieldMethods;
         },
         max(errorMessage: string) {
@@ -47,3 +60,5 @@ function form(form: HTMLFormElement): IFormValidator {
     validate() {},
   };
 }
+const check = form(document.querySelector('form'));
+check.field('name').string().
