@@ -9,8 +9,34 @@
     <main>
       <section>
         <form novalidate>
-          <label>Имя <input type="number" min="3" required name="name"></label>
-          <p role="alert" aria-live="assertive"></p>
+          <label
+            >Имя
+            <input
+              type="number"
+              min="3"
+              required
+              name="name"
+              placeholder="имя"
+              aria-describedby="name"
+              min="3" />
+            <span id="name"></span
+          ></label>
+          <label
+            >Текст <span id="text"></span
+            ><input
+              type="text"
+              placeholder="текст"
+              aria-describedby="text"
+              name="text"
+          /></label>
+          <label
+            >Почта <span id="email"></span
+            ><input
+              type="email"
+              placeholder="почта"
+              aria-describedby="email"
+              name="email"
+          /></label>
           <button type="submit">Отправить</button>
         </form>
       </section>
