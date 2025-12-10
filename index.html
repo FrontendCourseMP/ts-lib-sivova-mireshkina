@@ -8,17 +8,29 @@
   <body>
     <main>
       <section>
-        <form novalidate>
-          <label
+        <form novalidate id="formA">
+        <label
             >Имя
-            <input
-              type="number"
-              min="3"
+            <input 
+              type="text"
+              minlength="3"
               required
               name="name"
               placeholder="имя"
               aria-describedby="name"
-              min="3" />
+             />
+            <span id="name"></span
+          ></label>
+          <label
+            >число
+            <input 
+              type="number"
+              min="3"
+              required
+              name="number"
+              placeholder="число"
+              aria-describedby="number"
+              max="100" />
             <span id="name"></span
           ></label>
           <label
@@ -28,6 +40,8 @@
               placeholder="текст"
               aria-describedby="text"
               name="text"
+              minlength="3"
+              required
           /></label>
           <label
             >Почта <span id="email"></span
@@ -36,7 +50,21 @@
               placeholder="почта"
               aria-describedby="email"
               name="email"
+              required
+              minlength="5"
+              maxlength="30"
           /></label>
+          <button type="submit">Отправить</button>
+        </form>
+
+         <form novalidate id="formB">
+        <label>Имя<input/><span id="name"></span></label>
+          <label>число <input/><span id="name"></span
+          ></label>
+          <label>Текст <span id="text"></span
+            ><input      /></label>
+          <label>Почта <span id="email"></span
+            ><input/></label>
           <button type="submit">Отправить</button>
         </form>
       </section>
